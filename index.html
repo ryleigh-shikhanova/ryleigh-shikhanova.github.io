@@ -1,3 +1,6 @@
+---
+---
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -13,6 +16,7 @@
     <nav aria-label="Primary navigation">
       <a href="#projects">Projects</a>
       <a href="#opensource">Open Source</a>
+      <a href="#blog">Blog</a>
       <a href="#about">About</a>
       <a href="Ryleigh-Shikhanova-Resume.pdf">Résumé</a>
     </nav>
@@ -91,6 +95,70 @@
         </div>
       </div>
     </section>
+
+<section class="section" id="blog">
+    <div class="wrap">
+
+        <div class="section-heading">
+            <p>04 / WRITING</p>
+            <h2>Latest Writing</h2>
+        </div>
+
+        <div class="blog-grid">
+
+            {% for post in site.posts limit:3 %}
+
+            <article class="blog-card">
+
+                <div class="blog-meta">
+                    <time datetime="{{ post.date | date: '%Y-%m-%d' }}">
+                        {{ post.date | date: "%B %d, %Y" }}
+                    </time>
+
+                    {% if post.categories.size > 0 %}
+                    <span>{{ post.categories | first }}</span>
+                    {% endif %}
+                </div>
+
+                <h3>
+                    <a href="{{ post.url | relative_url }}">
+                        {{ post.title }}
+                    </a>
+                </h3>
+
+                {% if post.description %}
+                <p>{{ post.description }}</p>
+                {% else %}
+                <p>
+                    {{ post.excerpt
+                        | strip_html
+                        | normalize_whitespace
+                        | truncatewords: 30
+                    }}
+                </p>
+                {% endif %}
+
+                <a
+                    class="project-link blog-link"
+                    href="{{ post.url | relative_url }}"
+                >
+                    Read article ↗
+                </a>
+
+            </article>
+
+            {% endfor %}
+
+        </div>
+
+        <div class="blog-all">
+            <a class="button" href="/blog/">
+                View all writing ↗
+            </a>
+        </div>
+
+    </div>
+</section>
 
     <section class="wrap section contact">
       <p class="eyebrow">LET'S CONNECT</p>

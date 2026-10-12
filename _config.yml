@@ -1,0 +1,15 @@
+title: Ryleigh Shikhanova
+description: Software Engineering and Systems Programming
+
+url: "https://ryleighshikhanova.dev"
+baseurl: ""
+
+markdown: kramdown
+highlighter: rouge
+
+permalink: /blog/:title/
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
