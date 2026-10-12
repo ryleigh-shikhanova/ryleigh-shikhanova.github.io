@@ -105,7 +105,6 @@
         </div>
 
         <div class="blog-grid">
-
             {% for post in site.posts limit:3 %}
 
             <article class="blog-card">
@@ -116,7 +115,7 @@
                     </time>
 
                     {% if post.categories.size > 0 %}
-                    <span>{{ post.categories | first }}</span>
+                        <span>{{ post.categories | first }}</span>
                     {% endif %}
                 </div>
 
@@ -127,19 +126,19 @@
                 </h3>
 
                 {% if post.description %}
-                <p>{{ post.description }}</p>
+                    <p>{{ post.description }}</p>
                 {% else %}
-                <p>
-                    {{ post.excerpt
-                        | strip_html
-                        | normalize_whitespace
-                        | truncatewords: 30
-                    }}
-                </p>
+                    <p>
+                        {{ post.excerpt
+                            | strip_html
+                            | normalize_whitespace
+                            | truncatewords: 30
+                        }}
+                    </p>
                 {% endif %}
 
                 <a
-                    class="project-link blog-link"
+                    class="project-link"
                     href="{{ post.url | relative_url }}"
                 >
                     Read article ↗
@@ -148,7 +147,6 @@
             </article>
 
             {% endfor %}
-
         </div>
 
         <div class="blog-all">
