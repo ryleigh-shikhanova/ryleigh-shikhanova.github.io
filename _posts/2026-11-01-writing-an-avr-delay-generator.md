@@ -2,8 +2,8 @@
 layout: post
 title: "Writing an AVR Delay Generator in Rust"
 date: 2026-11-01
-categories: [systems, embedded]
-tags: [rust, avr-assembly, embedded, microcontrollers]
+categories: [systems]
+tags: []
 ---
 
 I came across a fairly simple problem while writing the firmware for my Intel 8080 power supervisor:
